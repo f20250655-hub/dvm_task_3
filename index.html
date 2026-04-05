@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo"><a href="#">b.</a></span>
+            <span class="nav-links">
+                <span class="active">Grotesque 800 /</span>
+                <span class="version">v.1.2</span>
+            </span>
+            <span class="dot">
+                .
+            </span>
+            <span class="muted">
+                Grotesque 400/
+                <span class="in-proress">In Progress</span>
+            </span>
+            <span class="dot">
+                .
+            </span>
+            <span class="muted">
+                Grotesque 900/
+                <span class="in-proress">In Progress</span>
+            </span>
+        </div>
+        <div class="nav-right">
+            <span class="clock" id="clock">10:3:19</span>
+            <a href="#" class="tweet-btn">TWEET AND GET IT FREE ↗</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-txt">
+            <h1 class="outline">BASEMENT</h1>
+            <h1 class="solid">GROTESQUE</h1>
+        </div>
+        <a href="#" class="scroll-down">KNOW MORE ABOUT IT DOWNSTAIRS ↘</a>
+        <div class="hero-img">
+            <img src="labelhero.webp" alt="">
+        </div>
+    </section>
+    <section class="about">
+        <div class="about-text">
+            <p id="para1">
+                <b>Basement Grotesque</b> is the studio’s first
+                venture into the daunting but exciting world of
+                type design. Of course, we had to start with a
+                heavyweight: striking and unapologetically so;
+                flawed but charming and full of character.
+            </p>
+            <p id="para2">
+                We set out inspired by the expressiveness of early 19th-century grotesque
+                typefaces and the boldness and striking visuals of the contemporary revival
+                of brutalist aesthetics. Grotesque is the first step in a very ambitious path
+                we’ve set for ourselves.
+            </p>
+            <p id="para3">
+                The typeface is a work in progress, open to anyone who shares our visual
+                and graphic sensibilities. You're invited to check our journey as we iterate,
+                change, and add new weights and widths in the future as we learn by doing.
+            </p>
+        </div>
+        <div class="about-letters">
+            <span class="letter-outline">Ab</span>
+            <span class="letter-outline">Ab</span>
+            <span class="letter-outline">Ab</span>
+            <span class="letter-outline">Ab</span>
+            <span class="letter-mains">Ab</span>
+        </div>
+    </section>
+    <section class="alphabets">
+        <div class="alpha-background">
+            <svg class="alpha-ellipse" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="600" cy="300" rx="330" ry="110" fill="none" stroke="white" stroke-width="2"
+                    transform="rotate(-60, 600, 300)" />
+            </svg>
+        </div>
+        <p class="alphabet_para1">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+        <p class="alphabet_para2"> abcdefghijklmnopqrstuvwxyz</p>
+        <p class="alphabet_para3">0123456789!?&</p>
+        <div class="alpha1"></div>
+        <div class="alpha2"></div>
+        <div class="alpha3"></div>
+    </section>
+    <section class="characters">
+        <div class="characters-header">
+            <h2 class="characters-title">CHARACTERS</h2>
+            <div class="characters-info">
+                <p>413 GLYPHS</p>
+                <p>BLACK (800)</p>
+                <p>OTF</p>
+            </div>
+        </div>
+
+        <div class="characters-grid-wrapper" id="characters-grid-wrapper">
+            <div class="characters-grid" id="characters-grid"></div>
+        </div>
+        <div class="characters-footer">
+
+            <a href="#" class="view-all-btn" id="view-all-btn">
+                VIEW ALL↗
+            </a>
+        </div>
+    </section>
+    <section class="cities">
+        <p id="symbol">†</p>
+        <p>LËTZEBUERG</p>
+        <p>MOSCOW</p>
+        <p>GENÈVE</p>
+        <p>ROMA</p>
+        <p id="symbol">‡</p>
+    </section>
+    <section class="catacomb">
+        <div class="catacomb-heading">
+            <h2>CATACOMBS, ALTHOUGH MOST NOTABLE AS UNDERGROUND PASSAGEWAYS AND CEMETERIES, ALSO HOUSE MANY DECORATIONS.
+            </h2>
+        </div>
+        <div class="catacomb-row">
+            <div class="catacomb-img">
+                <span id="img-1"><svg width="119" height="168" viewBox="0 0 119 168" fill="none" xmlns="http://w3.org">
+                        <path
+                            d="M55.9082 91.3575C56.2204 97.9133 49.9768 106.342 38.1141 109.464L25.0027 107.279C-5.59058 101.972 -11.8341 96.9767 -11.8341 85.4262C-12.1463 78.8705 -5.90276 70.4417 5.95995 67.32L19.0714 69.5052C49.6647 74.8122 55.9082 79.807 55.9082 91.3575ZM-74.2694 94.7915C-74.2694 113.834 -67.0893 130.692 -37.1204 139.433C-21.1994 144.115 -6.83928 147.861 26.8758 152.856C47.1673 155.978 55.9082 159.724 55.9082 171.899C55.9082 186.884 52.7864 188.444 23.4418 188.444C-6.83928 188.444 -10.2732 185.947 -10.2732 156.915H-69.5868C-69.5868 215.604 -50.544 229.027 26.2514 229.027C99.9251 229.027 118.343 217.165 118.343 169.402C118.343 144.428 111.788 130.38 86.1893 120.702C83.0675 119.453 79.3214 118.205 75.5753 117.268C106.481 116.956 118.343 106.342 118.343 81.9922C118.343 62.9495 111.163 46.0919 81.1945 37.351C65.2735 32.6684 50.9134 28.9222 17.1983 23.9274C-3.09317 20.8056 -11.8341 17.0595 -11.8341 4.88465C-11.8341 -10.0998 -8.71234 -11.6607 20.6322 -11.6607C50.9134 -11.6607 54.3473 -9.16329 54.3473 19.8691H113.661C113.661 -38.82 94.6181 -52.2437 17.8227 -52.2437C-55.851 -52.2437 -74.2694 -40.3809 -74.2694 7.38207C-74.2694 32.3562 -67.7137 46.4041 -42.1152 56.0816C-38.9935 57.3303 -35.2473 58.579 -31.5012 59.5155C-63.3432 59.8277 -74.2694 70.4417 -74.2694 94.7915Z"
+                            fill="#FDFDFD"></path>
+                    </svg>
+                </span>
+                <span id="img-2">¶</span>
+
+            </div>
+            <div class="catacomb-description">
+                <p>There are thousands of decorations in the centuries-old catacombs of Rome, catacombs of Paris, and
+                    other known and unknown catacombs, some of which include inscriptions, paintings, statues,
+                    ornaments, and other items placed in the graves over the years.</p>
+            </div>
+        </div>
+        <div class="catacomb-card">
+            <div class="card-top">
+                <div class="cata-card-1">
+                    <span class="cata-card-1-span">MANY ACCENTS, <br> OBVIOUSLY</span>
+                    <div class="card-1-text">
+                        <p>aàáâä</p>
+                        <p>aàáâä</p>
+                        <p>aàáâä</p>
+                    </div>
+                </div>
+                <div class="cata-card-2">
+                    <span class="cata-card-2-span">CAPITAL VARIABLES, <br> BECAUSE, WHY NOT?</span>
+                    <div class="card-2-text">
+                        <p>RRRR</p>
+                        <p>GG</p>
+                        <p>QQ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <p>1918-2021</p>
+                <p>£ 206.10</p>
+                <p>€ 37,00</p>
+                <span>WHO NEEDS NUMBERS?</span>
+            </div>
+        </div>
+    </section>
+    <section class="try-font">
+        <div class="try-font-header">
+            <p>TRY THIS BEAUTY:)</p>
+            <p>HANDCRAFTED <br>
+                FOR STRING DESIGNS
+            </p>
+
+        </div>
+        <div class="try-font-input">
+            <div class="try-font-preview">
+                <span class="try-font-meta" id="meta-display">
+                    S: 60PX | T: -2px | L: 110%
+                </span>
+                <textarea type="text" class="try-font-text"
+                    id="try-font-text">We Make Cool Shit That Performs</textarea>
+            </div>
+            <div class="try-font-controls">
+                <div class="control-row">
+                    <div class="control-row-txt">
+                        <span class="control-label">
+                            Size
+                        </span>
+                        <span class="control-value" id="size-value">108px</span>
+                    </div>
+                    <div class="control-row-slider">
+                        <input type="range" class="slider" id="size-slider" min="21" max="195" value="108">
+                    </div>
+                </div>
+                <div class="control-row">
+                    <div class="control-row-txt">
+                        <span class="control-label">
+                            Tracking
+                        </span>
+                        <span class="control-value" id="tracking-value">-2px</span>
+                    </div>
+                    <div class="control-row-slider">
+                        <input type="range" class="slider" id="tracking-slider" min="-4.0" max="4.0" step="0.1"
+                            value="-2">
+                    </div>
+                </div>
+                <div class="control-row">
+                    <div class="control-row-txt">
+                        <span class="control-label">
+                            Leading
+                        </span>
+                        <span class="control-value" id="leading-value">100%</span>
+                    </div>
+                    <div class="control-row-slider">
+                        <input type="range" class="slider" id="leading-slider" min="83" max="140" value="110">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="showcase">
+        <div class="showcase-bg">
+            <img src="subway.webp" alt="subway-bg">
+        </div>
+        <div class="showcase-content">
+            <div class="showcase-img">
+                <img src="street.webp" alt="">
+            </div>
+            <div class="showcase-text">
+                <p> <strong>FORGET MORALITY</strong> &nbsp;Moral philosophy is bogus,
+                    <span class="showcase-gap"></span>
+                    a mere substitute for God that licenses
+                    <span class="showcase-gap"></span>
+                    ugly emotions.
+                </p>
+                <div class="showcase-codes">
+                    <p>I002.s5</p>
+                    <p>I001.s5</p>
+                </div>
+            </div>
+        </div>
+        <div class="billboard">
+            <div class="billboard-left">
+                <div class="billboard-video">
+                    <video autoplay muted loop src="KTYPE B- 1.mp4"></video>
+                </div>
+                <div class="billboard-up">
+                    <p>I004.s5</p>
+                </div>
+                <div class="billboard-down">
+                    <img src="arrow-down.png" alt="arrow">
+                    <div class="billboard-text">
+                        <p id="billboard-para">In every Mithraeum the centerpiece was a representation of Mithras
+                            killing a sacred bull, an
+                            act called the Tauroctony.</p>
+                        <p>I003.s5</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="billboard-right">
+                <div class="billboard-img">
+                    <img src="mar-del-plata.webp" alt="img">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <section class="edition">
+        <p>2K21</p>
+        <div class="edition-text">
+            <p>I005.s5</p>
+            <img src="the-odyssey.webp" alt="">
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="status-board">
+        <div class="changelog">
+            <span class="col-label">CHANGELOG</span>
+            <h2 class="col-heading">VERSION HISTORY</h2>
+            <div class="version-item">
+                <h3 class="version-num">1.2</h3>
+                <div class="version-detail">
+                    <span class="arrow">↳</span>
+                    <div>
+                        <p>Refined shapes for certain glyphs. Adjusted kerning and addition of more variants and
+                            ligatures.</p>
+                        <span class="verion-date">24 Sep 2021</span>
+                    </div>
+                </div>
+            </div>
+            <div class="version-item">
+                <h3 class="version-num">1.1
+                </h3>
+                <div class="version-detail">
+                    <span class="arrow">↳</span>
+                    <div>
+                        <p>Refined and redrawn shapes. Masters set up for additional weights and widths. Renaming from
+                            Bold to Black to comply with the new weight spectrum.
+
+                        </p>
+                        <span class="verion-date">08 Aug 2021</span>
+                    </div>
+                </div>
+            </div>
+            <div class="version-item">
+                <h3 class="version-num">1.0
+                </h3>
+                <div class="version-detail">
+                    <span class="arrow">↳</span>
+                    <div>
+                        <p>Private release. Bold weight, full set of glyphs with support for most Latin languages, full
+                            set of punctuation and symbols.</p>
+                        <span class="verion-date">28 May 2021</span>
+                    </div>
+                </div>
+            </div>
+            <div class="version-item">
+                <h3 class="version-num">0.9
+                </h3>
+                <div class="version-detail">
+                    <span class="arrow">↳</span>
+                    <div>
+                        <p>Capital letters, alternative glyphs, stylistic sets, regular and discretionary ligatures,
+                            lining and old-style figures.
+
+                        </p>
+                        <span class="verion-date">24 May 2021</span>
+                    </div>
+                </div>
+            </div>
+            <div class="version-item">
+                <h3 class="version-num">0.5
+                </h3>
+                <div class="version-detail">
+                    <span class="arrow">↳</span>
+                    <div>
+                        <p>Lowercase and some capital letters.
+                        </p>
+                        <span class="verion-date">17 Apr 2021</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="status">
+            <span class="col-label">STATS</span>
+            <h2 class="col-heading">FEATURES STATUS</h2>
+            <div class="feature">
+                <div class="feature-item">
+                    <div class="feature-top">
+                        <span class="feature-name">Family styles</span>
+                        <span class="feature-score">1/5</span>
+                    </div>
+                    <div class="feature-dots">
+                        <span class="arrow">↳</span>
+                        <div class="dots">
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-top">
+                        <span class="feature-name">Character set</span>
+                        <span class="feature-score">4/5</span>
+                    </div>
+                    <div class="feature-dots">
+                        <span class="arrow">↳</span>
+                        <div class="dots">
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-top">
+                        <span class="feature-name">Spacing & Kerning</span>
+                        <span class="feature-score">3/5</span>
+                    </div>
+                    <div class="feature-dots">
+                        <span class="arrow">↳</span>
+                        <div class="dots">
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-top">
+                        <span class="feature-name">Hinting</span>
+                        <span class="feature-score">4/5</span>
+                    </div>
+                    <div class="feature-dots">
+                        <span class="arrow">↳</span>
+                        <div class="dots">
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                            <span class="dot dot--empty"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                                    width="60" height="60">
+                                    <polygon fill="white" points="
+    50,4   54,35  62,8   58,38
+    72,16  62,42  84,28  65,48
+    96,50  65,54  84,72  62,58
+    72,84  58,62  62,92  54,65
+    50,96  46,65  38,92  42,62
+    28,84  38,58  16,72  35,54
+    4,50   35,46  16,28  38,42
+    28,16  42,38  38,8   46,35
+  " />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tweets">
+            <span class="col-label">#BASEMENTGROTESQUE</span>
+            <h2 class="col-heading">TWEETS</h2>
+            <div class="tweet-card">
+                <div class="tweet-author">
+                    <div class="tweet-avatar"><img src="7xutqHWn_normal.webp" alt=""></div>
+                    <div>
+                        <p class="tweet-name">pacheco</p>
+                        <p class="tweet-handle">@TradingTuga</p>
+                    </div>
+                </div>
+                <p class="tweet-body">
+                    I'm downloading the #basementgrotesque typeface, the boldest font I'll ever use on
+                    my side-projects. Thank you guys @basementstudio 🖥 Get it now: https://t.co/vVVYlfqMzw
+                </p>
+                <span class="tweet-date">05:47 am · 29 Mar 2026</span>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="footer-top">
+        <div class="footer-left" id="footerLetters">
+            <div class="footer-letter"></div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-text">
+                <p id="foot-1">OUR WORK IS SERIOUS</p>
+                <p id="foot-2">WE ARE NOT</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">TWITTER ↗</a>
+                <a href="#">DRIBBLE ↗</a>
+                <a href="#">INSTAGRAM ↗</a>
+                <a href="#">GITHUB ↗</a>
+            </div>
+        </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <div class="footer-bar-item-1">EULA</div>
+            <div class="footer-bar-item-2">CONTACT</div>
+            <div class="footer-bar-item-3">© basement.studio LLC 2026 all rights reserved</div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
