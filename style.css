@@ -15,7 +15,9 @@ body{
     font-family: 'Basement Grotesque', sans-serif;
 }
 .navbar{
+    height: 70px;
     display: flex;
+    align-items: center;
     align-items: center;
     justify-content: space-between;
     padding: 18px 24px;
@@ -25,6 +27,19 @@ body{
     top: 0;
     background-color: rgb(16,16,16,0.8);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transform: translateY(0px);
+    margin-inline: 0px;
+    transition: transform 0.5s ease, margin-inline 0.5s ease;
+}
+.navbar.scrolled{
+    height: 65px;
+    top: 46px;
+    transform: translateY(-30px);
+    margin-inline: 24px;
+    border-radius: 12px;
+    background-color: rgb(16,16,16,0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+
 }
 .nav-left{
     display: flex;
@@ -70,7 +85,7 @@ letter-spacing: 2px;
     letter-spacing: 0.05em;
 }
 .hero{
-    /* min-height: 100vh; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -175,6 +190,9 @@ transition: opacity 0.5s ease 1.3s,transform 0.5s ease 1.3s;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: clamp(16px,1.3vw,26px);
 
+}
+#para4{
+    display: none;
 }
 .about-text p b{
     font-family: 'Basement Grotesque', sans-serif;
@@ -296,6 +314,7 @@ position: relative;
     z-index:0 ;
     opacity: 0;
     transition: opacity 0.5s ease 2s;
+    pointer-events: none;
 }
 
 .alpha-background.visible{
@@ -419,7 +438,7 @@ gap: 15px;
     font-size: clamp(15px,1.5vw,40px);
 }
 .cities{
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -932,8 +951,8 @@ align-items: center;
     gap: 20px;
 }
 .dot{
-    font-size: 60px;
-
+    font-size: 20px;
+    
 }
 .tweets{
     border-left: 2px solid white;
@@ -1061,6 +1080,7 @@ align-items: center;
 }
 
 @media (max-width: 900px) {
+    .page-wrapper{overflow-x: hidden;}
     .navbar {
         padding: 14px 16px;
     }
@@ -1077,15 +1097,26 @@ align-items: center;
     .hero-txt {
         height: auto;
         padding-top: 40px;
+
     }
     .hero-txt h1 {
         font-size: clamp(48px, 13vw, 80px);
         white-space: normal;
         line-height: 0.85;
     }
+    .hero{
+        height: 130vh;
+        width: 100vw;
+    }
     .hero-img {
-        width: 60%;
-        margin-top: 30px;
+        width: 50%;
+        height: 10%;
+        margin-top: 200px;
+    }
+    .hero-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .scroll-down {
         margin-top: 60px;
@@ -1116,9 +1147,18 @@ align-items: center;
 
   .about-text {
     max-width: 100%;
-    padding: 24px 20px 60px;
-    gap: 20px;
+    padding: 24px 30px 60px;
+    gap: 30px;
+  
   }
+  #para1,#para2,#para3{
+ font-size: clamp(10px,3.5vw,60px);
+  }
+#para4{
+    font-size: clamp(10px,5vw,60px);
+    display: inline-block;
+    padding-top: 40px;
+}
   @keyframes letter_main {
     0%   { transform: translate(-8px, -8px); }
     60%  { transform: translate(2px, 2px); }
@@ -1144,16 +1184,30 @@ align-items: center;
     60%  { transform: translate(-15px, -15px); }
     100% { transform: translate(-16px, -16px); }
   }
-    
+    .alphabets{
+        height: 90vh;
+        padding-top: 50px;
+    }
     .alphabets_div {
         font-size: clamp(36px, 9vw, 60px);
     }
     .alpha1, .alpha2, .alpha3 {
-        padding: 0 20px;
+        padding: 0 40px;
     }
     .alpha-background{
-        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
     }
+    .alpha-ellipse{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -70%);
+    min-width: 1200px;
+}
   .characters-grid-wrapper {
     max-height: none;
     overflow: hidden;
@@ -1174,25 +1228,39 @@ align-items: center;
     height: clamp(72px, 20vw, 90px);
     font-size: clamp(22px, 6vw, 36px);
   }
-
+  .characters-header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .characters-title{
+    font-size: clamp(20px,6vw,70px);
+  }
+  .characters-info p{
+    font-size: clamp(20px,2.5vw,40px);
+    text-align: left;
+  }
   .characters-footer {
     display: none;
   }
-
+    .cities{
+        height: 60vh;
+    }
     .cities p {
         font-size: clamp(28px, 9vw, 60px);
         text-align: center;
     }
     .catacomb {
         padding: 40px 16px;
-        gap: 30px;
+        gap: 70px;
     }
     .catacomb-heading {
         width: 100%;
+
     }
     .catacomb-heading h2 {
         max-width: 100%;
-        font-size: clamp(14px, 4vw, 22px);
+        font-size: clamp(20px, 5vw, 60px);
     }
     .catacomb-row {
         flex-direction: column;
@@ -1201,22 +1269,39 @@ align-items: center;
     }
     .catacomb-img {
         width: 100%;
-        height: 150px;
+        height: 180px;
+
     }
+    .catacomb-img #img-2{
+        position: absolute;
+        top: 20%;
+font-size: clamp(10px,20vw,150px);
+}
+   
     .catacomb-description {
         width: 100%;
         font-size: clamp(14px, 4vw, 20px);
     }
-    .catacomb-card { gap: 40px; padding-bottom: 60px; }
+    .catacomb-card { 
+        gap: 100px;
+        padding-bottom: 60px;
+     }
+
     .card-top {
         flex-direction: column;
     }
     .cata-card-1, .cata-card-2 {
         width: 100%;
-        height: 260px;
+        height: 90vw;
+    }
+    .cata-card-1-span,.cata-card-2-span{
+        display: none;
+    }
+    .card-2-text{
+        top: 30%;
     }
     .card-1-text p, .card-2-text p {
-        font-size: clamp(24px, 10vw, 60px);
+        font-size: clamp(24px, 13vw, 90px);
         letter-spacing: 0.3rem;
     }
     .card-bottom p {
@@ -1232,15 +1317,20 @@ align-items: center;
         flex-direction: column;
         gap: 10px;
     }
+    .try-font-header p:nth-child(1) {
+       font-size: clamp(4px,6vw,50px);
+    }
     .try-font-header p:nth-child(2) {
-        text-align: left;
-        font-size: clamp(11px, 3vw, 14px);
+       display: none;
     }
     .try-font-preview {
          padding: 20px 16px;
          }
     .try-font-text { 
         font-size: clamp(40px, 10vw, 72px);
+     }
+     #size-slider{
+        initial-value: 32px;
      }
 
     .showcase { 
