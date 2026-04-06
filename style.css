@@ -65,6 +65,7 @@ font-family:'Basement Grotesque', sans-serif ;
     opacity: 0.4;
     font-weight: 600;
     font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .nav-right{
     display: flex;
@@ -83,6 +84,64 @@ letter-spacing: 2px;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 0.05em;
+}
+.hamburger-btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+.hamburger-btn span{
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger-btn.open span:nth-child(1){
+    transform: translateY(5px) rotate(45deg);
+}
+.hamburger-btn.open span:nth-child(2){
+    opacity: 0;
+}
+.hamburger-btn.open span:nth-child(3){
+transform: translateY(-5px) rotate(-45deg);
+}
+.mobile-menu{
+    display: none;
+    height: 100vh;
+
+}
+.mobile-menu.open{
+    display: flex;
+}
+.mobile-menu-content{
+    padding: 100px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: clamp(20px,5vw,40px);
+}
+.mobile-menu-item{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+.mobile-tweet-btn{
+    color: white;
+    text-decoration: none;
+    font-size: clamp(20px,10vw,100px);
+}
+.inactive{
+    opacity: 0.4;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .hero{
     min-height: 100vh;
@@ -1093,6 +1152,12 @@ align-items: center;
         width: 100%;
         padding: 14px 16px;
     }
+    .navbar.scrolled{
+        padding-right: 60px;
+    }
+    .tweet-btn{
+        display: none;
+    }
     .dot{
         display: none;
     }
@@ -1138,27 +1203,38 @@ align-items: center;
 
  .about {
     flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
     min-height: 100vh;
     padding: 0;
-    gap: 0;
+    gap: 100px;
+
   }
-  .about-letters {
+  .about-letters{
     position: relative;
-    right: unset;
-    top: unset;
+    margin-left: -60px;
+    padding: 0;
     transform: none;
     font-size: clamp(120px, 42vw, 220px);
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vw;
+    /* height: 40vh; */
     overflow: visible;
   }
+  .about-letters span{
+    font-size: clamp(60px,55vw,420px);
+  }
 
+  .letter-outline,.letter-mains{
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    /* transform: translate(-50vw, -50vw); */
+  }
   .about-text {
+    margin-top: 40vw;
     max-width: 100%;
     padding: 24px 30px 60px;
     gap: 30px;
@@ -1174,28 +1250,28 @@ align-items: center;
 }
   @keyframes letter_main {
     0%   { transform: translate(-8px, -8px); }
-    60%  { transform: translate(2px, 2px); }
+    60%  { transform: translate(6px, 6px); }
     100% { transform: translate(0px, 0px); }
   }
   @keyframes letter_outline_1 {
     0%   { transform: translate(-12px, -12px); }
-    60%  { transform: translate(-3px, -3px); }
-    100% { transform: translate(-4px, -4px); }
+    60%  { transform: translate(1px, 1px); }
+    100% { transform: translate(-5px, -5px); }
   }
   @keyframes letter_outline_2 {
     0%   { transform: translate(-16px, -16px); }
-    60%  { transform: translate(-7px, -7px); }
-    100% { transform: translate(-8px, -8px); }
+    60%  { transform: translate(-4px, -4px); }
+    100% { transform: translate(-10px, -10px); }
   }
   @keyframes letter_outline_3 {
     0%   { transform: translate(-20px, -20px); }
-    60%  { transform: translate(-11px, -11px); }
-    100% { transform: translate(-12px, -12px); }
+    60%  { transform: translate(-9px, -9px); }
+    100% { transform: translate(-15px, -15px); }
   }
   @keyframes letter_outline_4 {
     0%   { transform: translate(-24px, -24px); }
     60%  { transform: translate(-15px, -15px); }
-    100% { transform: translate(-16px, -16px); }
+    100% { transform: translate(-20px, -20px); }
   }
     .alphabets{
         height: 90vh;
@@ -1209,7 +1285,7 @@ align-items: center;
     }
     .alpha-background{
         position: absolute;
-        top: 50px;
+        top: 20px;
         left: 0;
     }
     .alpha-ellipse{

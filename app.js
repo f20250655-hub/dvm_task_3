@@ -33,6 +33,18 @@ window.addEventListener('scroll',()=>{
     }
 })
 
+
+// hamburger
+
+const hamBurger=document.getElementById('hamburgerBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+
+hamBurger.addEventListener('click',()=>{
+    hamBurger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    
+})
+
 //basement grotseque
 
 
