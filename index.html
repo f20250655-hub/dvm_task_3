@@ -234,7 +234,7 @@
                     <img src="street.webp" alt="">
                 </div>
                 <div class="showcase-text">
-                    <p> <strong>FORGET MORALITY</strong> &nbsp;Moral philosophy is bogus,
+                    <p> <strong>FORGET MORALITY</strong> <br class="mobile-break"> &nbsp;Moral philosophy is bogus,
                         <span class="showcase-gap"></span>
                         a mere substitute for God that licenses
                         <span class="showcase-gap"></span>
@@ -301,7 +301,15 @@
 
 
         <section class="status-board">
-            <div class="changelog">
+            <div class="mobile-dropdown">
+                <select  id="selectionSelect">
+            <option value="version">VERSION HISTORY</option>
+            <option value="feature">FEATURE STATUS</option> 
+            <option value="tweet">TWEETS</option>  
+            </select>
+             <span class="arrow">▼</span> 
+            </div>
+            <div class="changelog" id="version">
                 <span class="col-label">CHANGELOG</span>
                 <h2 class="col-heading">VERSION HISTORY</h2>
                 <div class="version-item">
@@ -370,7 +378,7 @@
                     </div>
                 </div>
             </div>
-            <div class="status">
+            <div class="status" id="feature">
                 <span class="col-label">STATS</span>
                 <h2 class="col-heading">FEATURES STATUS</h2>
                 <div class="feature">
@@ -683,7 +691,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tweets">
+            <div class="tweets" id="tweet">
                 <span class="col-label">#BASEMENTGROTESQUE</span>
                 <h2 class="col-heading">TWEETS</h2>
                 <div class="tweet-card">

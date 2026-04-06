@@ -773,6 +773,9 @@ font-size: clamp(10px,1.7vw,60px);
     align-items: center;
     gap: 300px;
 }
+.mobile-break{
+    display: none;
+}
 .billboard{
     display: flex;
     width: 100vw;
@@ -802,7 +805,7 @@ overflow: hidden;
     height: 100%;
     
 }
-.billboard-left{
+.board-left{
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -997,6 +1000,9 @@ align-items: center;
     opacity: 0.4;
     font-size: 15px;
 }
+.mobile-dropdown{
+    display: none;
+}
 .footer{
     margin:30px 40px;
     display: flex;
@@ -1082,7 +1088,13 @@ align-items: center;
 @media (max-width: 900px) {
     .page-wrapper{overflow-x: hidden;}
     .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
         padding: 14px 16px;
+    }
+    .dot{
+        display: none;
     }
     .nav-links,
     .muted {
@@ -1109,14 +1121,15 @@ align-items: center;
         width: 100vw;
     }
     .hero-img {
-        width: 50%;
-        height: 10%;
+        width: 90%;
+        height: 15%;
         margin-top: 200px;
+        padding: 0px;
     }
     .hero-img img{
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
     }
     .scroll-down {
         margin-top: 60px;
@@ -1335,73 +1348,149 @@ font-size: clamp(10px,20vw,150px);
 
     .showcase { 
         gap: 60px;
+        position: relative;
      }
     .showcase-content { 
         flex-direction: column;
      }
     .showcase-img {
-        position: relative;
-        top: unset; left: unset;
+        position: absolute;
+        top: 5%;
+        left :0%;
+        width: 45%;
+        height: 35vh;
+    }
+    .showcase-img img{
+        object-fit: fill;
         width: 100%;
+        height: 100%;
     }
     .showcase-text {
-        position: relative;
-        top: unset; right: unset;
+        position: absolute;
+        top: 500px;
         max-width: 100%;
         padding: 0 16px;
         gap: 20px;
     }
+    .showcase-text p{
+        font-size: clamp(20px,5vw,60px);
+    }
     .showcase-codes { 
         gap: 40px;
      }
+     .mobile-break{
+        display: inline;
+     }
     .showcase-gap {
+        display: none;
          width: 30px;
          }
     .billboard {
-        flex-direction: column;
+        flex-direction: column-reverse;
         width: 100%;
     }
     .billboard-left, .billboard-right {
         width: 100%;
+        
     }
     .billboard-left { 
-        padding-left: 16px; 
-        padding-right: 16px; 
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0px 30px; 
     }
-    .billboard-video, .billboard-img { 
+    .billboard-left p{
+        font-size: clamp(14px,5vw,40px);
+    }
+    .billboard-video { 
         width: 100%; 
     }
+.billboard-right{
+    display: flex;
+    margin-top: 300px;
+    justify-content: flex-end;
+}
+.billboard-para{
+    padding-top: 0;
+}
+.billboard-up{
+    text-align: right;
+}
     .billboard-text {
         max-width: 100%;
         gap: 30px;
     }
     .billboard-down {
-         flex-direction: column; gap: 20px;
+        display: flex;
+          gap: 40px;
          }
     .edition {
-        flex-direction: column;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
         padding: 30px 16px;
         gap: 24px;
     }
     .edition-text {
-        flex-direction: column;
-        gap: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 40px;
     }
     .edition-text img {
-        width: 100%;
+        width: 60%;
         height: auto;
     }
-    .status-board {
-        grid-template-columns: 1fr; 
-        margin: 0 16px;
+ .status-board {
+        grid-template-columns: 1fr;
         height: auto;
+        margin: 0px 16px;              
+        box-sizing: border-box;
+    }
+    .col-label{
+        display: none;
+    }
+    .col-heading{
+        display: none;
     }
     .changelog, .status, .tweets {
+        display: none;
         padding: 40px 20px;
         overflow-y: visible;
+        min-height: auto;
+    }
+    .changelog.active,.status.active,.tweets.active{
+        display: flex;
     }
     .status, .tweets {
         border-left: none;
         border-top: 2px solid white;
+    }
+    .mobile-dropdown{
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-right: 30px;
+        border-bottom: 2px solid white;
+        box-sizing: border-box;
+    }
+    #selectionSelect{
+         width: 100%;
+        padding: 16px 20px;
+        background: black;
+        color: white;
+        border: none;
+         font-size: clamp(14px,6vw,36px);
+        font-weight: 700;
+        letter-spacing: 0.08rem;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+      #sectionSelect:focus {
+        outline: none;
+    }
+
+    .mobile-dropdown.arrow{
+        pointer-events: none;
     }
 }
