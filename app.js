@@ -17,6 +17,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
         }
     })
 
@@ -153,6 +154,7 @@ observer.observe(document.querySelector('.hero-img'));
 
 //characters
 
+
 const characters = [
     'A', 'Á', 'Â', 'Ä', 'À', 'Å', 'Ã', 'Æ', 'B', 'C', 'Ç', 'D',
     'Ð', 'E', 'É', 'Ê', 'Ë', 'È', 'F', 'G', 'H', 'I', 'Í', 'Î',
@@ -168,20 +170,110 @@ const characters = [
     "'", '.', '·', ':', '-', '&', '†', '‡', '!', '¡',
     '?', '¿', '*', '#', '/', '\\', '–', '—', '_',
     '(', ')', '{', '}', '[', ']', '…',
-    '\u2018', '\u2019',
-    '«', '»', '‹', '›', '"',
+    '\u2018', '\u2019', '«', '»', '‹', '›', '"',
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@'
 ];
 
 const grid = document.getElementById('characters-grid');
 const viewAllBtn = document.getElementById('view-all-btn');
-characters.forEach((char) => {
-    const tile = document.createElement('div');
-    tile.classList.add('char-tile');
-    tile.textContent = char;
-    grid.appendChild(tile);
-});
 const wrapper = document.getElementById('characters-grid-wrapper');
+
+let tickerRunning = false;
+
+function initDesktop() {
+    grid.innerHTML = '';
+    tickerRunning = false;
+    if (viewAllBtn) viewAllBtn.style.display = '';
+
+    characters.forEach((char) => {
+        const tile = document.createElement('div');
+        tile.classList.add('char-tile');
+        tile.textContent = char;
+        grid.appendChild(tile);
+    });
+}
+
+function initTicker() {
+    grid.innerHTML = '';
+    tickerRunning = true;
+    if (viewAllBtn) viewAllBtn.style.display = 'none';
+    const tileSize = 80;
+    const gap = 8;
+    const rows = 4;
+    const totalCols = Math.ceil(characters.length / rows);
+
+    const gridData = Array.from({ length: rows }, () => []);
+    characters.forEach((char, i) => {
+        const col = Math.floor(i / rows);
+        const row = i % rows;
+        gridData[row][col] = char;
+    });
+
+    const container = document.createElement('div');
+    container.className = 'ticker-container';
+
+    const track = document.createElement('div');
+    track.className = 'ticker-track';
+
+    for (let r = 0; r < rows; r++) {
+        const rowEl = document.createElement('div');
+        rowEl.className = 'ticker-row';
+
+        const rowChars = [...gridData[r]];
+        rowChars.forEach(char => rowEl.appendChild(makeTile(char)));
+
+        const copies = Math.ceil((window.innerWidth * 3) / ((tileSize + gap) * totalCols)) + 1;
+        for (let c = 0; c < copies; c++) {
+            rowChars.forEach(char => rowEl.appendChild(makeTile(char)));
+        }
+
+        track.appendChild(rowEl);
+    }
+
+    container.appendChild(track);
+    grid.appendChild(container);
+
+    let x = 0;
+    const speed = 1.8;
+    let paused = false;
+    let running = true;
+
+    grid.addEventListener('touchstart', () => paused = true);
+    grid.addEventListener('touchend', () => paused = false);
+
+    const loopWidth = (tileSize + gap) * totalCols;
+
+    function tick() {
+        if (!running) return;
+        if (!paused) {
+            x += speed;
+            if (x >= loopWidth) x = 0;
+            track.style.transform = `translateX(${-x}px)`;
+        }
+        requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+    grid._stopTicker = () => { running = false; };
+}
+
+function makeTile(char) {
+    const tile = document.createElement('div');
+    tile.className = 'char-tile';
+    tile.textContent = char;
+    return tile;
+}
+
+function initLayout() {
+    if (window.innerWidth <= 900) {
+        if (grid._stopTicker) grid._stopTicker();
+        initTicker();
+    } else {
+        if (grid._stopTicker) grid._stopTicker();
+        initDesktop();
+    }
+}
+
 viewAllBtn.addEventListener('click', (e) => {
     e.preventDefault();
     wrapper.classList.toggle('expanded');
@@ -189,6 +281,20 @@ viewAllBtn.addEventListener('click', (e) => {
         ? 'SHOW LESS ↑'
         : 'VIEW ALL ↗';
 });
+
+initLayout();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+        initLayout();
+});
+
+
+
+
+
+
+
 
 
 //catacoms
@@ -303,12 +409,10 @@ const alphabetsP3 = document.querySelectorAll('.alphabets_para3');
         const size = [50, 60, 70, 80][Math.floor(Math.random() * 4)];
         el.style.fontSize = size + 'px';
         el.style.position = 'absolute';
-        el.style.lineHeight = '1';
         el.style.left = targetX + 'px';
 
         const startOffset = 120 + Math.random() * 100;
         el.style.top = `-${startOffset}px`;
-        el.style.opacity = '0';
 
         const rotation = (Math.random() - 0.5) * 60;
         const isWhite = Math.random() > 0.5;
@@ -331,7 +435,7 @@ const alphabetsP3 = document.querySelectorAll('.alphabets_para3');
             if (!start) start = ts;
             const p = Math.min((ts - start) / duration, 1);
             el.style.transform = `translateY(${p * p * floorY}px) rotate(${rotation}deg)`;
-            el.style.opacity = String(Math.min(p * 3, 1));
+            el.style.opacity = String(Math.min(p * 1, 1));
             if (p < 1) requestAnimationFrame(fall);
             else { start = null; requestAnimationFrame(bounce1); }
         }
@@ -361,14 +465,12 @@ const alphabetsP3 = document.querySelectorAll('.alphabets_para3');
 
         const cols = 8;
         const rows = 7;
-        const slotW = W / cols;
+        const slotW = W / (cols);
 
         for (let row = 0; row < rows; row++) {
             for (let col = 0; col < cols; col++) {
                 const x = col * slotW + Math.random() * (slotW * 0.2);
-                const y = row === rows - 1
-                    ? H - 85
-                    : (row / (rows - 1)) * (H - 85);
+                const y = row === rows - 1 ? H - 85 : (row / (rows - 1)) * (H - 85);
                 createLetter(x, y);
             }
         }
@@ -390,90 +492,14 @@ const alphabetsP3 = document.querySelectorAll('.alphabets_para3');
 
 //sliding letters
 
-function initCharactersTicker() {
-    if (window.innerWidth > 900) return;
 
-    const grid = document.querySelector('.characters-grid');
-    if (!grid) return;
 
-    const tiles = Array.from(grid.children);
-    grid.innerHTML = '';
-    const rowSize = 4;
-    const numRows = 4;
-    const rowsData = [];
-    for (let i = 0; i < numRows; i++) {
-        const start = i * rowSize;
-        rowsData.push(tiles.slice(start, start + rowSize));
-    }
 
-    const container = document.createElement('div');
-    container.style.cssText = `
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    overflow: hidden;
-    width: 100%;
-  `;
 
-    const track = document.createElement('div');
-    track.id = 'char-ticker-track';
-    track.style.cssText = `
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: max-content;
-    will-change: transform;
-  `;
 
-    rowsData.forEach((rowTiles) => {
-        const row = document.createElement('div');
-        row.style.cssText = `
-      display: flex;
-      flex-direction: row;
-      gap: 8px;
-      flex-wrap: nowrap;
-    `;
 
-        rowTiles.forEach(t => row.appendChild(t));
 
-        for (let c = 0; c < 6; c++) {
-            rowTiles.forEach(t => {
-                row.appendChild(t.cloneNode(true));
-            });
-        }
 
-        track.appendChild(row);
-    });
-
-    container.appendChild(track);
-    grid.appendChild(container);
-    let x = 0;
-    const speed = 1.8;
-    let paused = false;
-
-    grid.addEventListener('touchstart', () => paused = true);
-    grid.addEventListener('touchend', () => paused = false);
-
-    function getTileWidth() {
-        const firstTile = track.querySelector('.char-tile');
-        return firstTile ? firstTile.offsetWidth + 8 : 60;
-    }
-
-    function tick() {
-        if (!paused) {
-            x += speed;
-            const loopWidth = getTileWidth() * rowSize;
-            if (x >= loopWidth) x = 0;
-
-            track.style.transform = `translateX(${-x}px)`;
-        }
-        requestAnimationFrame(tick);
-    }
-
-    requestAnimationFrame(tick);
-}
-
-initCharactersTicker();
 
 //updating slider for short screen
 
