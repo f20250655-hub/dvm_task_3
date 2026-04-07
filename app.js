@@ -252,8 +252,7 @@ function initTicker() {
         }
         requestAnimationFrame(tick);
     }
-
-    requestAnimationFrame(tick);
+    tick();
     grid._stopTicker = () => { running = false; };
 }
 
@@ -283,19 +282,9 @@ viewAllBtn.addEventListener('click', (e) => {
 });
 
 initLayout();
-
-let resizeTimer;
 window.addEventListener('resize', () => {
         initLayout();
 });
-
-
-
-
-
-
-
-
 
 //catacoms
 
