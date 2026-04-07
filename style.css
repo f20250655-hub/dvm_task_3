@@ -13,6 +13,20 @@ body{
     background-color: #000;
     color: white;
     font-family: 'Basement Grotesque', sans-serif;
+    cursor: none;
+}
+.custom-cursor{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    color: white;
+    background: white;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
 }
 .navbar{
     height: 70px;
@@ -446,7 +460,6 @@ gap: 15px;
     font-size: clamp(12px,3vw,36px);
     font-weight: 800;
     color: black;
-    cursor: pointer;
     transition:background 0.15s,color 0.15s,transform 0.2s ease;
 }
 .char-tile:hover{

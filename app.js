@@ -1,3 +1,15 @@
+window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    window.scrollBy({
+        top: e.deltaY * 0.6,
+    });
+}, { passive: false });
+
+const cursor=document.querySelector('.custom-cursor');
+document.addEventListener('mousemove',(e)=>{
+cursor.style.left=`${e.clientX}px`;
+cursor.style.top=`${e.clientY}px`;
+})
 //navbar
 function updateClock() {
     const now = new Date();
